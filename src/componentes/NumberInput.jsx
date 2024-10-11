@@ -9,10 +9,15 @@ const NumberInput = () => {
     numero2: 0,
   });
 
-  const { handleChange, suma, numero1, numero2 } = operaciones(
-    numeros,
-    setNumeros
-  );
+  const {
+    handleChange,
+    suma,
+    resta,
+    multiplicacion,
+    division,
+    numero1,
+    numero2,
+  } = operaciones(numeros, setNumeros);
   return (
     <>
       <label htmlFor="">
@@ -34,7 +39,10 @@ const NumberInput = () => {
         />
       </label>
 
-      <Resultado operacion={suma} calculo={suma()} />
+      <Resultado operacion="Suma" calculo={suma()} />
+      <Resultado operacion="Resta" calculo={resta()} />
+      <Resultado operacion="Multiplicación" calculo={multiplicacion()} />
+      <Resultado operacion="División" calculo={division()} />
     </>
   );
 };
