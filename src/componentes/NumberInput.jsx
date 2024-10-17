@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Resultado from "./Resultado";
 import { operaciones } from "../helpers/operaciones";
+import "../App.css";
 
 const NumberInput = () => {
   const [numeros, setNumeros] = useState({
@@ -19,9 +20,9 @@ const NumberInput = () => {
     numero2,
   } = operaciones(numeros, setNumeros);
   return (
-    <>
+    <div className="calculadora">
       <label htmlFor="">
-        Numero1:
+        Numero1 :
         <input
           name="numero1"
           value={numero1}
@@ -30,7 +31,7 @@ const NumberInput = () => {
         />
       </label>
       <label htmlFor="">
-        Numero2:
+        Numero2 :
         <input
           name="numero2"
           value={numero2}
@@ -43,7 +44,7 @@ const NumberInput = () => {
       <Resultado operacion="Resta" calculo={resta()} />
       <Resultado operacion="Multiplicación" calculo={multiplicacion()} />
       <Resultado operacion="División" calculo={division()} />
-    </>
+    </div>
   );
 };
 
